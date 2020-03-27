@@ -12,7 +12,7 @@ Goal is to publish a Travel Blog where you display a map and markers with posts 
 
 #### World Map with Google Maps API
 
-- [ ] Use the Google Maps JavaScript API to display a world map.
+* [ ] Use the Google Maps JavaScript API to display a world map.
 - For each blog post, put a marker on the map at the location of the post.
 - Add a menu bar with title (e.g. "Travel Blog") on the left and author (profile picture, name) on the right.
 
