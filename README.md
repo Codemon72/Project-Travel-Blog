@@ -12,17 +12,19 @@ Goal is to publish a Travel Blog where you display a map and markers with posts 
 
 #### World Map with Google Maps API
 
-- [ ] Use the Google Maps JavaScript API to display a world map.
-- [ ] For each blog post, put a marker on the map at the location of the post.
+- [x] Use the Google Maps JavaScript API to display a world map.
+- [x] For each blog post, put a marker on the map at the location of the post.
+  - [ ] center the map on the bounds of all markers
 - [ ] Add a menu bar with title (e.g. "Travel Blog") on the left and author (profile picture, name) on the right.
 
 #### Display Blog Posts at Location
 
-- [ ] Make the markers clickable: on click, show the blog post at that location as InfoWindow.
+- [x] Make the markers clickable: on click, show the blog post at that location as InfoWindow.
+- [ ] On click all pre-existing infowindows are closed
 - [ ] A blog post should contain:
   - [ ] image 
-  - [ ] title
-  - [ ] text
+  - [x] title
+  - [x] text
   - [ ] author with name and image
   - [ ] date
   - [ ] location with city and country
