@@ -95,6 +95,14 @@ const places = [
   }
 ];
 const allMarkers = [];
+const infoWindows = [];
+
+const closeInfoWindows = () => {
+	for (let i = 0; i < infoWindows.length; i++) {
+		const infoWindow = infoWindows[i];
+		infoWindow.close();
+	}
+};
 
 console.log(places[0].location.lat, places[0].location.lng);
 console.log({ lat: places[0].location.lat, lng: places[0].location.lng });
@@ -124,11 +132,10 @@ function initMap() {
       `
     });
     marker.addListener("click", () => {
-      if (infowindow) {
-        infowindow.close();
-      }
+      closeInfoWindows();        
       infowindow.open(map, marker);
     });
+    infoWindows[i] = infowindow;
   }
 }
 console.log(allMarkers);
