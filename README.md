@@ -20,7 +20,7 @@ Goal is to publish a Travel Blog where you display a map and markers with posts 
 #### Display Blog Posts at Location
 
 - [x] Make the markers clickable: on click, show the blog post at that location as InfoWindow.
-- [ ] On click all pre-existing infowindows are closed
+- [x] On click all pre-existing infowindows are closed
 - [ ] A blog post should contain:
   - [ ] image 
   - [x] title
