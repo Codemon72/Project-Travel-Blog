@@ -94,18 +94,15 @@ const places = [
     }
   }
 ];
-const allMarkers = [];
+
 const infoWindows = [];
 
 const closeInfoWindows = () => {
 	for (let i = 0; i < infoWindows.length; i++) {
 		const infoWindow = infoWindows[i];
 		infoWindow.close();
-	}
+  }
 };
-
-console.log(places[0].location.lat, places[0].location.lng);
-console.log({ lat: places[0].location.lat, lng: places[0].location.lng });
 
 const getPosition = place => {
   return { lat: place.location.lat, lng: place.location.lng };
@@ -125,20 +122,19 @@ function initMap() {
       map: map,
       title: `${places[i].title}`
     });
-    allMarkers.push(marker);
+    marker.addListener("click", () => {
+      closeInfoWindows();        
+      infowindow.open(map, marker);
+    });
     const infowindow = new google.maps.InfoWindow({
       content: `<h1>${places[i].title}</h1>
       <div>${places[i].text}</div>
       `
     });
-    marker.addListener("click", () => {
-      closeInfoWindows();        
-      infowindow.open(map, marker);
-    });
     infoWindows[i] = infowindow;
   }
 }
-console.log(allMarkers);
+
 
 // const allMarkers = [
 //   (godafoss = { lat: 65.674663968, lng: -17.537331184 }),
