@@ -1,28 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Project Travel Blog</title>
-    <link rel="icon" href="/img/bee.svg" />
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="utf-8">
-    <style>
-      /* Always set the map height explicitly to define the size of the div
+
+<head>
+  <title>Project Travel Blog</title>
+  <link rel="icon" href="/img/bee.svg" />
+  <meta name="viewport" content="initial-scale=1.0">
+  <meta charset="utf-8">
+  <link href="tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="map"></div>
-    <script src="index.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=MYAPIKEY&callback=initMap"
+    #map {
+      height: 100%;
+    }
+
+    /* Optional: Makes the sample page fill the window. */
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="flex items-center justify-between flex-wrap bg-blue-700 p-6">
+    <div class="flex items-center flex-shrink-0 text-white mr-6">
+
+      <span class="font-semibold text-3xl tracking-tight">Project Travel Blog</span>
+    </div>
+
+    <div class="flex items-center text-sm px-4 py-2 leading-none text-white">
+
+      <img class="h-16 rounded-full mr-8" src="img/icon_ClemensTrueSelf.jpg" alt="Clemens_B">
+      <span class="font-semibold text-2xl tracking-tight">Clemens~&#128029;</span>
+
+    </div>
+    </div>
+  </nav>
+
+
+  <div id="map"></div>
+
+  <script src="index.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=MYAPIKEY&callback=initMap"
     async defer></script>
-  </body>
+</body>
+
 </html>
