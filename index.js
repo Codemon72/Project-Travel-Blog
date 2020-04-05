@@ -104,6 +104,25 @@ const closeInfoWindows = () => {
   }
 };
 
+const createHtml = onePlace => {
+  const html = `<img class="w-64" src="${onePlace.image ? onePlace.image.src : ""}" alt="${onePlace.image ? onePlace.image.alt : ""}">
+  <div class="px-6 py-4 box-border w-64">
+    <div class="font-bold text-xl mb-2">${onePlace.title}</div>
+    <p class="text-gray-700 text-base">
+      ${onePlace.text}
+    </p>
+  </div>
+  <div class="px-6 py-4 flex items-center w-64 box-border">
+    <img class="w-10 h-10 rounded-full mr-4" src="${onePlace.author_image ? onePlace.author_image : ""}" alt="${onePlace.author ? onePlace.author : ""}">
+    <div class="text-sm">
+      <p class="text-gray-900 leading-none">${onePlace.author}</p>
+      <p class="text-gray-600">${onePlace.date.toDate ? onePlace.date.toDate().toDateString() : onePlace.date}</p>
+    </div>
+  </div>
+  <div class="px-6 py-4">${onePlace.location.city}, ${onePlace.location.country}</div>`
+  return html;
+}
+
 const getPosition = place => {
   return { lat: place.location.lat, lng: place.location.lng };
 };
@@ -112,7 +131,7 @@ function initMap() {
   const hamburg = { lat: 53.55618, lng: 9.92557 };
 
   map = new google.maps.Map(mapDiv, {
-    center: getPosition(places[3]),
+    center: {lat: 0, lng: 0},
     zoom: 2
   });
 
@@ -125,11 +144,16 @@ function initMap() {
     marker.addListener("click", () => {
       closeInfoWindows();        
       infowindow.open(map, marker);
+      map.setZoom(5);
+      map.setCenter(marker.getPosition());
+    });
+    map.addListener("click", () => {
+      closeInfoWindows();        
+      map.setZoom(2);
+      map.setCenter({lat: 0, lng: 0});
     });
     const infowindow = new google.maps.InfoWindow({
-      content: `<h1>${places[i].title}</h1>
-      <div>${places[i].text}</div>
-      `
+      content: createHtml(places[i])
     });
     infoWindows[i] = infowindow;
   }
