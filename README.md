@@ -6,8 +6,6 @@ This project is part of the curriculum of the Full-Stack Web Development program
 
 Goal is to publish a Travel Blog where you display a map and markers with posts about the places you visited.
 
-<img src="board-images/travel-blog-sketch.jpg" width="600"/>
-
 ### Features
 
 #### World Map with Google Maps API
@@ -21,13 +19,13 @@ Goal is to publish a Travel Blog where you display a map and markers with posts 
 
 - [x] Make the markers clickable: on click, show the blog post at that location as InfoWindow.
 - [x] On click all pre-existing infowindows are closed
-- [ ] A blog post should contain:
-  - [ ] image 
+- [x] A blog post should contain:
+  - [x] image 
   - [x] title
   - [x] text
-  - [ ] author with name and image
-  - [ ] date
-  - [ ] location with city and country
+  - [x] author with name and image
+  - [x] date
+  - [x] location with city and country
 
 #### Get Blog Posts from Firestore
 
