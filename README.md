@@ -29,10 +29,10 @@ Goal is to publish a Travel Blog where you display a map and markers with posts 
 
 #### Get Blog Posts from Firestore
 
-- [ ] Store the blog posts on Firebase Firestore and load them with the Firebase JavaScript API.
-- [ ] Also save the coordinates of a location with latitude and longitude.
-- [ ] Load the blog posts as soon as the map is loaded (inside the `initMap()` function).
-- [ ] Save Markers and InfoWindows in global arrays to handle click events easier.
+- [x] Store the blog posts on Firebase Firestore and load them with the Firebase JavaScript API.
+- [x] Also save the coordinates of a location with latitude and longitude.
+- [_x_] Load the blog posts as soon as the map is loaded (inside the `initMap()` function).
+- [x] Save Markers and InfoWindows in global arrays to handle click events easier.
 
 #### Admin View
 
