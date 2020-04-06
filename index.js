@@ -29,7 +29,7 @@ db.collection("posts")
 
       marker.addListener("click", () => {
         closeInfoWindows();
-        infowindow.open(map, marker);
+        infoWindow.open(map, marker);
         map.setZoom(5);
         map.setCenter(marker.getPosition());
       });
