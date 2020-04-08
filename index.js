@@ -22,7 +22,8 @@ db.collection("posts")
       const marker = new google.maps.Marker({
         position: getPosition(json),
         map: map,
-        title: `${json.title}`,
+        // animation: google.maps.Animation.DROP,
+        title: `${json.title}`
       });
 
       markers.push(marker);
@@ -48,16 +49,20 @@ function initMap() {
     zoom: 2,
   });
 
-  const bounds = new google.maps.LatLngBounds();
-
   map.addListener("click", () => {
     closeInfoWindows();
-    map.setZoom(2);
-    map.setCenter({ lat: 0, lng: 0 });
+    zoomInOnAllPlaces();
   });
 
-  // get lat and lng for right-click on map
   map.addListener("rightclick", showAddressOnRightClick);
+}
+
+const zoomInOnAllPlaces = () => {
+  const bounds = new google.maps.LatLngBounds();
+  markers.forEach(location => {
+    bounds.extend(location.getPosition());
+  });
+  map.fitBounds(bounds);
 }
 
 const showAddressOnRightClick = (event) => {
