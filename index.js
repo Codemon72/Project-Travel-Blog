@@ -39,26 +39,35 @@ db.collection("posts")
       });
 
       infoWindows.push(infoWindow);
-
-      
     });
   });
 
-  function initMap() {
-    map = new google.maps.Map(mapDiv, {
-      center: { lat: 0, lng: 0 },
-      zoom: 2,
-    });
-  
-    map.addListener("click", () => {
-      console.log("blib");
-      closeInfoWindows();
-      map.setZoom(2);
-      map.setCenter({ lat: 0, lng: 0 });
-    });
-  }
+function initMap() {
+  map = new google.maps.Map(mapDiv, {
+    center: { lat: 0, lng: 0 },
+    zoom: 2,
+  });
 
+  const bounds = new google.maps.LatLngBounds();
 
+  map.addListener("click", () => {
+    closeInfoWindows();
+    map.setZoom(2);
+    map.setCenter({ lat: 0, lng: 0 });
+  });
+
+  // get lat and lng for right-click on map
+  map.addListener("rightclick", showAddressOnRightClick);
+}
+
+const showAddressOnRightClick = (event) => {
+  const lat = event.latLng.lat();
+  const lng = event.latLng.lng();
+  // set new marker
+  // write lat and lng into form fields
+  // show note to fill in form for new marker
+  console.log("Lat=" + lat + "; Lng=" + lng);
+};
 
 const closeInfoWindows = () => {
   for (let i = 0; i < infoWindows.length; i++) {
@@ -99,8 +108,6 @@ const createPostHtml = (onePlace) => {
   }</div>`;
   return html;
 };
-
-
 
 // const allMarkers = [
 //   (godafoss = { lat: 65.674663968, lng: -17.537331184 }),
