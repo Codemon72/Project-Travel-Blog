@@ -16,6 +16,7 @@ db.collection("posts")
 // Submit a new blog post
 const submitNewBlogPost = (e) => {
   e.preventDefault();
+  console.log("triggered");
 
   // get values from form
   const title = document.getElementById("title").value;
@@ -41,7 +42,7 @@ const submitNewBlogPost = (e) => {
       },
       image: {
         src: imagesrc,
-        alt: title
+        alt: title,
       },
       date: date,
       author: "BrueschLee",
@@ -55,9 +56,8 @@ const submitNewBlogPost = (e) => {
     });
 };
 
-document
-  .getElementById("submitNewBlogPost")
-  .addEventListener("submit", submitNewBlogPost);
+const newSubmit = document.getElementById("submitNewBlogPost");
+newSubmit.addEventListener("submit", submitNewBlogPost);
 
 const createBlogPostHtml = (post) => {
   return `<div class="container mx-auto max-w-sm rounded overflow-hidden shadow-lg justify-center bg-white m-6">
