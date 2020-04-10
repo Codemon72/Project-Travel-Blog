@@ -40,8 +40,8 @@ Goal is to publish a Travel Blog where you display a map and markers with posts 
 - [x] This should go to an HTML file `admin.html`.
 - [x] This contains the list of blog posts (as in Micro Blog).
 - [x] At the bottom, create a form to submit a new blog post.
-- [ ] On submit, send the new blog post to Firestore.
-- [ ] For the images, save the image in your project manually and save the relative path as string, e.g. `"img/barcelona.jpg"`.
+- [x] On submit, send the new blog post to Firestore.
+- [x] For the images, save the image in your project manually and save the relative path as string, e.g. `"img/barcelona.jpg"`.
 
 #### Authentication
 
