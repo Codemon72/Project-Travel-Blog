@@ -16,24 +16,25 @@ db.collection("posts")
 // Submit a new blog post
 const submitNewBlogPost = (e) => {
   e.preventDefault();
-  console.log("triggered");
 
   // get values from form
   const title = document.getElementById("title").value;
   const city = document.getElementById("city").value;
   const country = document.getElementById("country").value;
-  const text = document.getElementById("text").value;
-  const latitude = document.getElementById("lat").value;
-  const longitude = document.getElementById("lng").value;
+  const description = document.getElementById("description").value;
+  const latitudeElement = document.getElementById("lat");
+  const latitude = +latitudeElement.value;
+  const longitudeElement = document.getElementById("lng");
+  const longitude = +longitudeElement.value;
   const imagesrc = document.getElementById("imagesrc").value;
-  console.log(title, text, city, country, lat, lng, imagesrc);
+  console.log(`Title = ${title}, Text = ${description}, City = ${city}, Country = ${country}, Lat = ${latitude}, Lng = ${longitude}, ImageSrc = ${imagesrc}`);
   const date = new Date();
 
   // send to Firestore
   db.collection("posts")
     .add({
       title: title,
-      text: text,
+      text: description,
       location: {
         city: city,
         country: country,
@@ -41,12 +42,12 @@ const submitNewBlogPost = (e) => {
         lng: longitude,
       },
       image: {
-        src: imagesrc,
+        src: "/img/" + imagesrc,
         alt: title,
       },
       date: date,
-      author: "BrueschLee",
-      author_image: "img/icon_ClemensTrueSelf.jpg",
+      author: "Clemens_B",
+      author_image: "img/icon_cm--portugal.jpg",
     })
     .then((docRef) => {
       console.log("Document written with ID: ", docRef.id);
