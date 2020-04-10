@@ -203,7 +203,7 @@ const createPostHtml = (onePlace) => {
 //       alt: "Uluru"
 //     },
 //     text:
-//       "Stuck in Dream Time! There is no such thing. Turn around to Uluru. Get back.",
+//       "Stuck in Dream Time. There is no such thing. Turn around to Uluru. Get back.",
 //     author: "Wild Bill",
 //     author_image: "img/icon_cowboy.jpg",
 //     date: "March 9, 2020",

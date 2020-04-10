@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Travel Blog - Admin</title>
+  <link rel="icon" href="/img/bee.svg" />
+  <meta name="viewport" content="initial-scale=1.0">
+  <meta charset="utf-8">
+  <link href="tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Optional: Makes the sample page fill the window. */
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body class="bg-yellow-200">
+
+  <nav class="flex items-center justify-between flex-wrap bg-blue-700 p-6">
+    <div class="flex items-center flex-shrink-0 text-white mr-6">
+
+      <span class="font-semibold text-3xl tracking-tight">Project Travel Blog</span>
+    </div>
+
+    <div class="flex items-center text-sm px-4 py-2 leading-none text-white">
+
+      <span class="font-semibold text-2xl tracking-tight">Admin View</span>
+
+    </div>
+
+  </nav>
+
+  <div class="flex">
+
+    <div class="w-1/3 p-20">
+
+      <form id="submitNewBlogPost" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+
+        <div class="uppercase font-bold text-xl mb-2">Add a new place</div>
+
+        <hr class="mb-4">
+
+        <div class="mb-4">
+          <label class="block uppercase tracking-wide text-gray-700 text-s font-bold mb-2" for="title">Title</label>
+          <input id="title"
+            class="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+            name="title" placeholder="Write a title ..."  />
+        </div>
+
+        <div class="mb-4">
+          <label class="block uppercase tracking-wide text-gray-700 text-s font-bold mb-2" for="city">City</label>
+          <input id="city"
+            class="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+            name="city" placeholder="Name the nearest city"  />
+        </div>
+
+        <div class="mb-4">
+          <label class="block uppercase tracking-wide text-gray-700 text-s font-bold mb-2" for="country">country</label>
+          <input id="country"
+            class="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+            name="country" placeholder="Name the country"  />
+        </div>
+
+        <div class="mb-4">
+          <label class="block uppercase tracking-wide text-gray-700 text-s font-bold mb-2"
+            for="description">Description</label>
+            <input id="description"
+            class="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+            name="description" placeholder="Write a description ..."  />
+        </div>
+
+        <div class="mb-4">
+          <label class="block uppercase tracking-wide text-gray-700 text-s font-bold mb-2" for="lat">Latitude</label>
+          <input id="lat"
+            class="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+            type="number"  step="any" name="lat">
+        </div>
+
+        <div class="mb-4">
+          <label class="block uppercase tracking-wide text-gray-700 text-s font-bold mb-2" for="lng">Longitude</label>
+          <input id="lng"
+            class="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+            type="number"  step="any" name="long">
+        </div>
+
+        <div class="mb-4">
+          <label class="block uppercase tracking-wide text-gray-700 text-s font-bold mb-2" for="imagesrc">Image Url</label>
+          <input id="imagesrc"
+            class="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+            name="imagesrc" placeholder="Enter an image url" />
+        </div>
+
+        <div class="mb-4">
+          <label class="block uppercase tracking-wide text-gray-700 text-s font-bold mb-2" for="image">Upload an
+            image</label>
+          <input
+            class="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+            type="file" name="image" />
+        </div>
+
+        <div class="mb-4">
+          <input
+            class="bg-blue-700 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" value="Submit">
+        </div>
+
+      </form>
+    </div>
+
+    <div class="w-2/3 p-12">
+
+      <!-- The Blog- Content -->
+      <div id="content" class="w-full max-w-md mx-auto">
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-firestore.js"></script>
+  <script src="index.js"></script>
+  <script src="form.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=MYAPIKEY" async defer></script>
+
+</body>
+
+</html>
