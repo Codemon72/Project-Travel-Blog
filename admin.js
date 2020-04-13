@@ -1,3 +1,5 @@
+const db = firebase.firestore();
+
 const content = document.getElementById("content");
 
 db.collection("posts")
@@ -16,7 +18,6 @@ db.collection("posts")
 // Submit a new blog post
 const submitNewBlogPost = (e) => {
   e.preventDefault();
-
   // get values from form
   const title = document.getElementById("title").value;
   const city = document.getElementById("city").value;
@@ -27,9 +28,10 @@ const submitNewBlogPost = (e) => {
   const longitudeElement = document.getElementById("lng");
   const longitude = +longitudeElement.value;
   const imagesrc = document.getElementById("imagesrc").value;
-  console.log(`Title = ${title}, Text = ${description}, City = ${city}, Country = ${country}, Lat = ${latitude}, Lng = ${longitude}, ImageSrc = ${imagesrc}`);
+  console.log(
+    `Title = ${title}, Text = ${description}, City = ${city}, Country = ${country}, Lat = ${latitude}, Lng = ${longitude}, ImageSrc = ${imagesrc}`
+  );
   const date = new Date();
-
   // send to Firestore
   db.collection("posts")
     .add({
@@ -51,6 +53,8 @@ const submitNewBlogPost = (e) => {
     })
     .then((docRef) => {
       console.log("Document written with ID: ", docRef.id);
+      // reload after sending to empty form and load new blog
+      location.reload(true)
     })
     .catch((error) => {
       console.error("Error adding document: ", error);
@@ -60,6 +64,7 @@ const submitNewBlogPost = (e) => {
 const newSubmit = document.getElementById("submitNewBlogPost");
 newSubmit.addEventListener("submit", submitNewBlogPost);
 
+// Create HTML for Blog Posts
 const createBlogPostHtml = (post) => {
   return `<div class="container mx-auto max-w-sm rounded overflow-hidden shadow-lg justify-center bg-white m-6">
   <img class="w-full" src="${post.image ? post.image.src : ""}" alt="${
@@ -85,3 +90,17 @@ const createBlogPostHtml = (post) => {
   <div class="px-6 py-4">${post.location.city}, ${post.location.country}</div>
 </div>`;
 };
+
+// Redirect to index.html if user is not logged in
+firebase.auth().onAuthStateChanged(user => {
+  if (user) {
+    // User is signed in.
+    console.log("logged in");
+    
+  } else {
+    // No user is signed in.
+    console.log("logged out");
+    
+    window.location.href = "index.html";
+  }
+});
