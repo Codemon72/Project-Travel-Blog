@@ -1,14 +1,10 @@
-// Your web app's Firebase configuration
-
 
 let map;
 const places = [];
 const markers = [];
 const infoWindows = [];
 const mapDiv = document.getElementById("map");
-
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+const logOutButton = document.getElementById("logOutButton");
 
 const db = firebase.firestore();
 
@@ -22,7 +18,7 @@ db.collection("posts")
       const marker = new google.maps.Marker({
         position: getPosition(json),
         map: map,
-        // animation: google.maps.Animation.DROP,
+        animation: google.maps.Animation.DROP,
         title: `${json.title}`
       });
 
@@ -46,7 +42,7 @@ db.collection("posts")
 function initMap() {
   map = new google.maps.Map(mapDiv, {
     center: { lat: 0, lng: 0 },
-    zoom: 2,
+    zoom: 3,
   });
 
   map.addListener("click", () => {
@@ -85,6 +81,7 @@ const getPosition = (place) => {
   return { lat: place.location.lat, lng: place.location.lng };
 };
 
+//TODO: renaming: createInfoWindowHtml
 const createPostHtml = (onePlace) => {
   const html = `<img class="w-64" src="${
     onePlace.image ? onePlace.image.src : ""
@@ -113,6 +110,42 @@ const createPostHtml = (onePlace) => {
   }</div>`;
   return html;
 };
+
+// Authentication
+firebase.auth().onAuthStateChanged(user => {
+  if (user) {
+    // User is signed in.
+    console.log("logged in");
+
+    document.getElementById("loginButton").classList.remove("flex");
+    document.getElementById("loginButton").classList.add("hidden");
+
+    document.getElementById("userSign").classList.remove("hidden");
+    document.getElementById("userSign").classList.add("flex");
+
+    document.getElementById("logOutButton").classList.remove("hidden");
+    document.getElementById("logOutButton").classList.add("flex");
+    
+  } else {
+    // No user is signed in.
+    console.log("logged out");
+    
+    document.getElementById("userSign").classList.add("hidden");
+    document.getElementById("userSign").classList.remove("flex");
+  }
+});
+
+const logout = () => {
+  firebase.auth().signOut().then(function() {
+    location.reload(true);
+    // Sign-out successful.
+  }).catch(function(error) {
+    // An error happened.
+    console.log("logout not successful")
+  });
+  }
+
+  logOutButton.addEventListener("click", logout);
 
 // const allMarkers = [
 //   (godafoss = { lat: 65.674663968, lng: -17.537331184 }),
