@@ -31,7 +31,7 @@ Goal is to publish a Travel Blog where you display a map and markers with posts 
 
 - [x] Store the blog posts on Firebase Firestore and load them with the Firebase JavaScript API.
 - [x] Also save the coordinates of a location with latitude and longitude.
-- [_x_] Load the blog posts as soon as the map is loaded (inside the `initMap()` function).
+- [x] Load the blog posts as soon as the map is loaded (inside the `initMap()` function).
 - [x] Save Markers and InfoWindows in global arrays to handle click events easier.
 
 #### Admin View
@@ -46,20 +46,20 @@ Goal is to publish a Travel Blog where you display a map and markers with posts 
 #### Authentication
 
 - [x] Use Firebase Auth (login with email and password) for authentication.
-- [ ] If the user is not logged in:
+- [x] If the user is not logged in:
   - [x] they can still see the map with all blog posts
   - [x] they do not see an author in the menu bar
   - [x] they do not see the "ADMIN" link in the menu bar
-  - [ ] they see a "LOGIN" link in the menu bar
+  - [x] they see a "LOGIN" link in the menu bar
 - [x] The "LOGIN" link in the menu bar leads to a page `login.html` that displays a login form.
 - [x] Unsuccessful login attempts show a general error message "Username and password do not match."
-- [ ] If the user successfully logged in:
+- [x] If the user successfully logged in:
   - [x] they are sent to the world map
   - [x] they do not see the "LOGIN" link in the menu bar
   - [x] they see the author (profile image, name) in the menu bar
   - [x] they see the "ADMIN" link in the menu bar
   - [x] they see a "Logout" button in the menu bar behind the author
-- [ ] If the user is not logged in and accesses `admin.html` directly in the browser, they are automatically sent to the login form.
+- [x] If the user is not logged in and accesses `admin.html` directly in the browser, they are automatically sent to the login form.
 
 #### Imprint / Contact
 
