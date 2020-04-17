@@ -117,32 +117,32 @@ Goal is to publish a Travel Blog where you display a map and markers with posts 
 
 ### Modalities
 
-- [ ] You can work alone or in a team of two.
-- [ ] You are allowed (and even encouraged) to ask your classmates for help or help them.
-- [ ] Use all the documentation and online tutorials as you like.
-- [ ] You can ask Teresa for help anytime.
-- [ ] For communication, use the Slack channel.
-- [ ] You get two consultation classes:
-  - [ ] Friday, March 27th, 18:00-20:00
-  - [ ] Friday, April 3rd, 18:00-20:00
-- [ ] The consultation classes take place in our online classroom at NewRow.
-- [ ] **Deadline: 17.4.2020, 18:00**
+- You can work alone or in a team of two.
+- You are allowed (and even encouraged) to ask your classmates for help or help them.
+- Use all the documentation and online tutorials as you like.
+- You can ask Teresa for help anytime.
+- For communication, use the Slack channel.
+- You get two consultation classes:
+  - Friday, March 27th, 18:00-20:00
+  - Friday, April 3rd, 18:00-20:00
+- The consultation classes take place in our online classroom at NewRow.
+- **Deadline: 17.4.2020, 18:00**
 
 ### Submission
 
 1. Upload your code to a new GitHub repository.
-  - [ ] Remember to remove your API keys.
-  - [ ] If you worked in a team, link the GitHub accounts of both of you in the README.md.
+  - Remember to remove your API keys.
+  - If you worked in a team, link the GitHub accounts of both of you in the README.md.
 
 2. Publish your travel blog on GitHub Pages.
-  - [ ] Create one login for you (or each team member)
-  - [ ] Create a guest login
-  - [ ] Have at least 8 blog posts
+  - Create one login for you (or each team member)
+  - Create a guest login
+  - Have at least 8 blog posts
 
 3. Send us an email with the following information:
-  - [ ] A link to your GitHub repository
-  - [ ] A link to your published travel blog
-  - [ ] If you worked in a team, both your names
-  - [ ] If you did any bonus tasks, list them
-  - [ ] Login information for the Guest account you created
-  - [ ] Send it to Teresa (teresa@hamburgcodingschool.com) and Jonas (jonas.reitmann@hamburgcodingschool.com)
+  - A link to your GitHub repository
+  - A link to your published travel blog
+  - If you worked in a team, both your names
+  - If you did any bonus tasks, list them
+  - Login information for the Guest account you created
+  - Send it to Teresa (teresa@hamburgcodingschool.com) and Jonas (jonas.reitmann@hamburgcodingschool.com)
