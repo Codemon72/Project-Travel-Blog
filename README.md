@@ -63,16 +63,16 @@ Goal is to publish a Travel Blog where you display a map and markers with posts 
 
 #### Imprint / Contact
 
-- [ ] Create a link in the menu bar "CONTACT".
-- [ ] Create a `contact.html` file.
-- [ ] Put your (and your team mate's) name there.
-- [ ] Write 2 sentences about your project.
-- [ ] Put your (or if you prefer [Hamburg Coding School's](https://hamburgcodingschool.com/contact/)) contact details:
-  - [ ] name
+- [x] Create a link in the menu bar "CONTACT".
+- [x] Create a `contact.html` file.
+- [x] Put your (and your team mate's) name there.
+- [x] Write 2 sentences about your project.
+- [x] Put your (or if you prefer [Hamburg Coding School's](https://hamburgcodingschool.com/contact/)) contact details:
+  - [x] name
   - [ ] address
-  - [ ] email
+  - [x] email
   - [ ] phone number
-- [ ] Write a note that this was a project from a course at Hamburg Coding School.
+- [x] Write a note that this was a project from a course at Hamburg Coding School.
 
 #### Tailwind CSS
 
