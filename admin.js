@@ -66,7 +66,7 @@ newSubmit.addEventListener("submit", submitNewBlogPost);
 
 // Create HTML for Blog Posts
 const createBlogPostHtml = (post) => {
-  return `<div class="container mx-auto max-w-sm rounded overflow-hidden shadow-lg justify-center bg-white m-6">
+  return `<div class="container max-w-sm rounded overflow-hidden shadow-lg justify-center bg-white m-6">
   <img class="w-full" src="${post.image ? post.image.src : ""}" alt="${
     post.image ? post.image.alt : ""
   }">
